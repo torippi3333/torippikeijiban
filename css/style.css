@@ -1,0 +1,604 @@
+body {
+  margin: 0;
+  background-color:#0d0d0d ;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.site-header {
+    background-color: rgba(17, 17, 17, 0.6); /* 半透明な黒 */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00ffff;
+  
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari用 */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* ネオンっぽい影 */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+.logo {
+    font-size: 24px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+.nav-menu a {
+    color: #00ffff;
+    text-decoration: none;
+    text-shadow: 0 0 5px #00ffff;
+    transition: 0.3s;
+  }
+  
+.nav-menu a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+  }
+  
+    @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+.nav-menu {
+      display: none;
+      flex-direction: column;
+      background: #111;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 10px;
+      border: 1px solid #00ffff;
+    }
+  
+.nav-menu.active {
+      display: flex;
+    }
+  }
+  
+.home {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+.logo img {
+    height: 40px;
+    filter: drop-shadow(0 0 5px #00ffff);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.home {
+  padding: 50px 20px;
+  text-align: center;
+  min-height: 100vh;
+  background-image: url('../IMG_5803.png  ');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* ネオンテキストが見やすくなるように暗めオーバーレイ */
+  position: relative;
+  z-index: 1;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 黒い半透明オーバーレイ */
+  z-index: -1;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border: 1px solid #00ffff;
+    background-color: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+.nav-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.members {
+  padding: 50px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.member-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+}
+
+.member-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.menu-toggle {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  background: #00ffff;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  transition: 0.4s ease;
+  border-radius: 3px;
+}
+
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 11px; }
+.menu-toggle span:nth-child(3) { top: 22px; }
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 11px;
+}
+
+@media screen and (max-width: 768px) {
+.menu-toggle {
+    display: block;
+  }
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(17, 17, 17, 0.6);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border: 1px solid #00ffff;
+    backdrop-filter: blur(8px);
+  }
+
+.nav-menu.active {
+    display: flex;
+  }
+}
+
+.menu-toggle {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  background: #00ffff;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  transition: 0.4s ease;
+  border-radius: 3px;
+}
+
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 11px; }
+.menu-toggle span:nth-child(3) { top: 22px; }
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 11px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(17, 17, 17, 0.6);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border: 1px solid #00ffff;
+    backdrop-filter: blur(8px);
+  }
+
+.nav-menu.active {
+    display: flex;
+  }
+}
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-links a {
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 10px;
+  border: 1px solid #00ffff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background-color: #00ffff;
+  color: #000;
+}
+
+.social-btn[data-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.member-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* ホバー時の光エフェクト！ */
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 0, 255, 0.5);
+}
+
+.news-section {
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+
+.news-section h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.news-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+}
+
+.news-date {
+  display: block;
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.news-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #00ffff;
+}
+
+.news-text {
+  font-size: 16px;
+}
+
+
+.contact {
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.contact-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #00ffff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #00bcd4;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+form button {
+  margin-top: 1.5rem;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  background-color: #00f0ff;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+form {
+  max-width: 400px;         /* ← 幅を制限！ */
+  width: 90%;               /* ← スマホ画面にも対応 */
+  margin: 0 auto;           /* ← 中央に配置 */
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+form {
+  max-width: 400px;        /* 入力欄の最大幅を決める */
+  margin: 0 auto;          /* 横方向の中央揃え */
+  padding: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;             /* form内の幅いっぱい使う */
+  display: block;
+  margin: 0 auto 1rem auto;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #0ff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: #0ff;
+  text-align: center;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
+  margin-bottom: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  background-color: #111;
+  border: 2px solid #0ff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  box-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    inset 0 0 5px #0ff;
+  transition: 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    inset 0 0 10px #0ff;
+}
+
+.neon-box {
+  background-color: #111;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 30px #0ff;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;  /* ← ここを center から flex-start に変える！ */
+  height: 100vh;
+  padding-top: 100px;  /* ヘッダーとかぶらないように調整 */
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  text-align: center;
+}
+
+.home {
+  font-size: 32px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+@media (max-width: 400px) {
+  .home h2 {
+    font-size: 13px;
+    letter-spacing: -1px;
+  }
+
+  .home p {
+    font-size: 12px;
+  }
+}
